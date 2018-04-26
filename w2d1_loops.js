@@ -162,16 +162,16 @@ console.log(sum);
 
 // ********************* DODATNI ZADATAK ************
 
-var a = [1, 2, 6, 5, 11]
-var b = [];
-var j;
-var i;
-var temp;
+// var a = [1, 2, 6, 5, 11]
+// var b = [];
+// var j;
+// var i;
+// var temp;
 
 
 // for (i = a.length - 1, j = 0; i >= 0; i-- , j++) {
 
-for (i = 0, j = a.length - 1; i < j; i++ , j--) {
+// for (i = 0, j = a.length - 1; i < j; i++ , j--) {
 
     //prva iteracija: b[0] = a[4], i=3, j=1;
 
@@ -186,9 +186,9 @@ for (i = 0, j = a.length - 1; i < j; i++ , j--) {
 
     // b[j] = a[i];
 
-    temp = a[i];
-    a[i] = a[j];
-    a[j] = temp;
+//     temp = a[i];
+//     a[i] = a[j];
+//     a[j] = temp;
 
-}
-console.log(a)
+// }
+// console.log(a)
