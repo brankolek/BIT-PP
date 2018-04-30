@@ -63,20 +63,20 @@ console.log(prod);
 
 // *************************** CETVRTI ZADATAK *********************************
 
-/* var x = ['1', 'A', 'B', "c", "r", true, NaN, undefined];
+var x = ['1', 'A', 'B', "c", "r", true, NaN, undefined];
 var total = '';
 
 for (var i = 0; i < x.length; i++) {
-   total = total + x[i];
+    total = total + x[i];
 }
 
-for (var i = 0; i < x.length; i++) {
-    if (typeof x[i] === "string") {
-        total += x[i];
-    }
-}
+// for (var i = 0; i < x.length; i++) {
+//     if (typeof x[i] === "string") {
+//         total += x[i];
+//     }
+// }
 console.log(total);
-*/
+
 
 // ************************* PETI ZADATAK **************************************
 
