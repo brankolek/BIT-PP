@@ -2,7 +2,7 @@
 
 
 
-// ****************** SORTIRANJE NIZA *********************
+// ***************************** SORTIRANJE NIZA *********************
 
 // FUNKCIJA MENJA ORIGINALNI NIZ!!!!!!!
 
@@ -10,7 +10,7 @@
 //     var i;
 //     var j;
 
-//     for (i = 0; i < a.length; i++) {
+//     for (var i = 0; i < a.length; i++) {
 
 //         var minIndex = i;
 //         for (j = i + 1; j < a.length; j++) {
@@ -147,4 +147,60 @@
 
 // console.log(x);
 // var x = 10;
+
+
+
+// ******************************* SESTI ZADATAK ********************
+'use strict';
+// var math = function () {
+//     var sum = 0;
+//     for (var i = 1; i <= 1000; i++) {
+//         if (i % 2 === 0) {
+//             sum = sum + i;
+//         }
+//     }
+//     for (var j = 1; j <= 500; j++) {
+//         if (j % 2 !== 0) {
+//             sum = sum - j;
+//         }
+//     }
+//     sum = sum * 12.5;
+//     return sum;
+// }
+
+// console.log(math());
+
+//**************************SEDMI ZADATAK **************************
+
+
+// var twoletters = function (a) {
+//     var result = "";
+//     for (var i = 0; i < a.length; i++) {
+//         if (typeof a[i] === "string" && a[i].length > 2) {
+//             result = result + a[i][0] + a[i][1];
+//         }
+//     }
+//     return result;
+// }
+
+
+
+// var a = ["M", "Anne", 12, "Steve", "Joe", "John", "David", "Mark", true, "A"];
+
+// console.log(twoletters(a));
+
+//**************************OSMI ZADATAK **************************
+
+
+// var reverseString = function (str) {
+//     var reverse = '';
+//     for (var i = str.length - 1; i >= 0; i--) {
+//         reverse = reverse + str[i];
+//     }
+//     return reverse;
+// };
+
+
+// var str = "Belgrade Institute of Technology";
+// console.log(reverseString(str));
 

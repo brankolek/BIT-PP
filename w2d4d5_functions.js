@@ -69,7 +69,7 @@
 // }
 
 // console.log(isBlank(""));
-
+"use strict";
 
 //************************** TRECI ZADATAK *******************************
 
@@ -82,7 +82,7 @@
 
 //     var result = "";
 
-//     for (i = 1; i <= n; i++) {
+//     for (var i = 1; i <= n; i++) {
 
 //         result = result + s;
 
@@ -104,7 +104,7 @@
 // function letter(s, l) {
 //     var n = 0;
 
-//     for (i = 0; i < s.length; i++) {
+//     for (var i = 0; i < s.length; i++) {
 //         if (l === s[i]) {
 
 //             n = n + 1;
@@ -259,7 +259,7 @@
 //         l = "-";
 //     }
 
-//     for (i = 0; i < s.length; i++) {
+//     for (var i = 0; i < s.length; i++) {
 //         if (s[i] === " ") {
 
 //             news = news + l;

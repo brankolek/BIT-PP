@@ -1,5 +1,5 @@
 // ******************************** PRVI ZADATAK ********************************
-
+"use strict"
 
 // function stringsToNum(arr) {
 //     var arrResult = [];
@@ -68,7 +68,7 @@ console.log(Falsy(a));
 
 // function integer(a) {
 //     var res = 0;
-//     for (i = 0; i < a.length; i++) {
+//     for (var i = 0; i < a.length; i++) {
 //         if (!isNaN(parseInt(a[i])) && parseInt(a[i]) === a[i]) {
 //             res = res + 1;
 
@@ -87,7 +87,7 @@ console.log(Falsy(a));
 
 // function float(a) {
 //     var res = 0;
-//     for (i = 0; i < a.length; i++) {
+//     for (var i = 0; i < a.length; i++) {
 //         if (!isNaN(parseInt(a[i])) && parseInt(a[i]) !== a[i]) {
 //             res = res + 1;
 //         }
@@ -99,4 +99,3 @@ console.log(Falsy(a));
 
 // console.log(float(a));
 
-//        
