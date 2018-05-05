@@ -202,3 +202,5 @@ console.log(index);
 // }
 
 // console.log(b);
+
+//*********************************************DESETI ZADATAK */
