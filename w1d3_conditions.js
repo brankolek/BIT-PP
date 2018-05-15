@@ -169,9 +169,3 @@ if (c > a && c > b && b > a) {
 // var result;
 
 // a % 3 === 0 && a % 5 === 0 ? console.log(result) : console.log("nije")
-
-
-
-
-
-

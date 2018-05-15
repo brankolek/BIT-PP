@@ -1,4 +1,3 @@
-
 // SVE JE U IIFE DA BI SE ZASTITIO OSTATAK PROGRAMA
 (function () {
     // TEORIJA 
@@ -24,17 +23,23 @@
 
     //FUNCTION CONSTRUCTOR
 
+
+
     function Genre(name) {
 
         this.name = name;
-        this.getData = function () {
-            var firstLetter = this.name[0].toUpperCase();
-            var lastLetter = this.name[this.name.length - 1].toUpperCase();
-            return firstLetter + lastLetter;
-
-        }
 
     }
+    Genre.prototype.getData = function () {
+        var firstLetter = this.name[0].toUpperCase();
+        var lastLetter = this.name[this.name.length - 1].toUpperCase();
+        return firstLetter + lastLetter;
+    }
+
+
+
+
+
 
     function Movie(title, genre, length) {
 
@@ -42,70 +47,78 @@
         this.genre = new Genre(genre);
         this.length = length;
 
-        this.getData = function () {
-
-            return this.title + ", " + this.length + ", " + this.genre.getData();
-        }
     }
+
+    Movie.prototype.getData = function () {
+
+        return this.title + ", " + this.length + ", " + this.genre.getData();
+    }
+
+
 
 
     function Program(datum) {
         this.date = new Date(datum);
         this.movies = [];
         this.totalMoviesProgram = 0;
-        this.addMovie = function (Movie) {
-
-            this.movies.push(Movie);
-            this.totalMoviesProgram++;
-        }
-
-        this.getData = function () {
-
-            var totalLength = 0;
-            var allMoviesData = ""
-
-            for (var i = 0; i < this.movies.length; i++) {
-
-                totalLength += parseInt(this.movies[i].length);
-                allMoviesData += this.movies[i].getData() + "\n";
-
-            }
-
-            totalLength += " min"
-
-            return this.date + ", " + totalLength + '\n' + allMoviesData;
-
-        }
 
     }
+
+    Program.prototype.addMovie = function (Movie) {
+
+        this.movies.push(Movie);
+        this.totalMoviesProgram++;
+    }
+
+    Program.prototype.getData = function () {
+
+        var totalLength = 0;
+        var allMoviesData = ""
+
+        for (var i = 0; i < this.movies.length; i++) {
+
+            totalLength += parseInt(this.movies[i].length);
+            allMoviesData += this.movies[i].getData() + "\n";
+
+        }
+
+        totalLength += " min"
+
+        return this.date + ", " + totalLength + '\n' + allMoviesData;
+
+    }
+
+
+
 
 
     function Festival(name) {
         this.name = name;
         this.programs = [];
         this.totalMoviesFestival = 0;
-        this.addProgram = function (Program) {
-
-            this.programs.push(Program);
-            this.totalMoviesFestival += Program.totalMoviesProgram;
-
-        }
-
-        this.getData = function () {
-
-            var allProgramsData = "";
-
-            for (var i = 0; i < this.programs.length; i++) {
-
-                allProgramsData += this.programs[i].getData() + "\n"
-
-            }
-
-            return this.name + " has " + this.totalMoviesFestival + " movie titles" + "\n" + allProgramsData;
-
-        }
 
     }
+
+    Festival.prototype.addProgram = function (Program) {
+
+        this.programs.push(Program);
+        this.totalMoviesFestival += Program.totalMoviesProgram;
+
+    }
+    Festival.prototype.getData = function () {
+
+        var allProgramsData = "";
+
+        for (var i = 0; i < this.programs.length; i++) {
+
+            allProgramsData += this.programs[i].getData() + "\n"
+
+        }
+
+        return this.name + " has " + this.totalMoviesFestival + " movie titles" + "\n" + allProgramsData;
+
+    }
+
 
 
 
@@ -130,7 +143,7 @@
 
     // "Dodavanje objekata batmana, ring objektu firstDay"
     firstDay.addMovie(batman);
-    firstDay.addMovie(ring);
+    Program.prototype.addMovie.call(firstDay, ring);
 
     // "Dodavanje objekata superman, friends objektu secondDay"
     secondDay.addMovie(superman);
@@ -178,7 +191,15 @@
     fest.addProgram(thirdDay);
 
     //Ispis svih podataka o festivalu! 
-    console.log(fest.getData())
+    // console.log(fest.getData())
+
+
+
+
+    console.log(batman.__proto__)
+    console.log(ring)
+    console.log(superman)
+    console.log(friends)
 
 
 

@@ -29,7 +29,12 @@
         this.surname = surname;
         this.dateOfBirth = new Date(dateOfBirth);
         this.getData = function () {
-            var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            var options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
             return this.name + this.surname + this.dateOfBirth.toLocaleDateString("en-US", options)
 
         }

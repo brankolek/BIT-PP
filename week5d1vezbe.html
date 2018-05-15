@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+
+
+
+
+
+
+
+
+
+
+
+    <style>
+        .backcolor {
+            background-color: blue;
+
+        }
+
+        .backcolor2 {
+            background-color: red;
+        }
+
+
+        .backcolor3 {
+            background-color: green;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>moki</li>
+        <li>nikola</li>
+        <li>radak</li>
+    </ul>
+
+
+    <ul>
+        <li>milica</li>
+        <li>sara</li>
+        <li>maja</li>
+    </ul>
+
+
+    <ul>
+        <li>plava</li>
+        <li>zuta</li>
+        <li>crvena</li>
+
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script>
+        function backcolor() {
+
+            document.getElementsByTagName("ul")[1].className = "backcolor";
+
+
+        }
+
+        backcolor();
+
+
+
+
+        function select() {
+
+            for (i = 0; i < document.querySelectorAll("li").length; i++) {
+                document.querySelectorAll("li")[i].className = "backcolor2";
+            }
+
+        }
+        select();
+
+
+
+
+        function treca() {
+            var a = document.querySelectorAll("ul:last-of-type li");
+            for (var i = 0; i < a.length; i++) {
+                a[i].className = "backcolor3";
+            }
+        }
+
+        treca();
+    </script>
+
+
+
+
+</body>
+
+</html>

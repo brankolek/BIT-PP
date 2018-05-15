@@ -26,14 +26,25 @@
         //?
         this.price = Number(round(parseFloat(price), 2).toFixed(2));
         this.expDate = new Date(expDate);
-        this.getInfo = function () {
-            var firstLetter = this.name[0].toUpperCase();
-            var lastLetter = this.name[this.name.length - 1].toUpperCase();
-            var productCode = firstLetter + lastLetter + this.id;
-            return productCode + ", " + this.name + ", " + this.price;
-        }
+
 
     }
+
+
+
+
+    Product.prototype.getInfo = function () {
+        var firstLetter = this.name[0].toUpperCase();
+        var lastLetter = this.name[this.name.length - 1].toUpperCase();
+        var productCode = firstLetter + lastLetter + this.id;
+        return productCode + ", " + this.name + ", " + this.price;
+    }
+
+
+
+
+
+
 
 
     // ShopingBag
@@ -78,6 +89,30 @@
         }
     }
 
+    ShopingBag.prototype.addProduct = function (product) {
+        var currentDate = new Date();
+        if (product.expDate > currentDate) {
+
+            this.productList.push(product);
+        }
+
+    }
+
+    ShopingBag.prototype.avgPrice = function () {
+        var avg = 0;
+        for (var i = 0; i < this.productList.length; i++) {
+
+            avg += (this.productList[i].price / this.productList.length)
+        }
+        return round(avg, 3);
+
+    }
+
+
+
+
+
+
 
     function PaymentCard(balance, status, validDate) {
 
@@ -87,6 +122,16 @@
 
 
     }
+
+
+
+
+
+
+
+
+
+
 
 
     function checkoutAndBuy(ShopingBag, PaymentCard) {
@@ -152,4 +197,3 @@
 
 
 })();
-
