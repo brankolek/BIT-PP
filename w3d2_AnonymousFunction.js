@@ -202,4 +202,88 @@
 
 
 // var str = "Belgrade Institute of Technology";
-// console.log(reverseString(str));
+<<
+<< << < HEAD
+    // console.log(reverseString(str));
+    ===
+    === =
+    // console.log(reverseString(str));
+
+
+
+    //*-************************ DEVETI ZADATAK ************************
+
+    // var a = [];
+
+    // for (var i = 1; i <= 7; i++) {
+    //     for (var j = 1; j <= 7; j++) {
+
+    //         if (j === i) {
+    //             continue;
+    //         } else {
+
+    //             a[0] = i;
+    //             a[1] = j;
+    //             console.log(a);
+    //         }
+    //     }
+    // }
+
+
+    // ********************************** JEDANESTI ZADATAK **********************
+
+
+    // function isPalindrom(string) {
+    //     var result = '';
+    //     for (i = 0; i < string.length; i++) {
+    //         if (string[i] === " ") {
+    //             continue;
+    //         } else {
+    //             result += string[i];
+    //         }
+    //     }
+    //     var index = true;
+    //     for (var i = 0, j = result.length - 1; i < j; i++ , j--) {
+
+    //         if (result[i] !== result[j]) {
+
+    //             index = false;
+    //         }
+    //     }
+
+    //     if (index) {
+
+    //         console.log("It is  a palindrom")
+    //     } else {
+
+    //         console.log("It is not a palindrom")
+    //     }
+    // }
+
+    // var string = "a nut for a jar of tuna";
+
+    // isPalindrom(string);
+
+
+    // ********************************* DVANESTI ZADATAK ***************************
+
+
+    // function greatestCommonDivisor(num1, num2) {
+    //     var result = 1;
+
+    //     for (var i = 1; i <= (num1 < num2 ? num1 : num2); i++) {
+
+    //         if (num1 % i === 0 && num2 % i === 0) {
+    //             result = i;
+    //         }
+    //     }
+
+    //     return result;
+    // }
+
+
+    // console.log(greatestCommonDivisor(81, 9));
+
+
+    >>>
+    >>> > 14866774 a9981123a3f3c62aa9ae3374d2810405
