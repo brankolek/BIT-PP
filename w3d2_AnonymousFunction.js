@@ -151,7 +151,7 @@
 
 
 // ******************************* SESTI ZADATAK ********************
-'use strict';
+// 'use strict';
 // var math = function () {
 //     var sum = 0;
 //     for (var i = 1; i <= 1000; i++) {
@@ -203,4 +203,3 @@
 
 // var str = "Belgrade Institute of Technology";
 // console.log(reverseString(str));
-
