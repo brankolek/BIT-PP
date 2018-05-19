@@ -104,20 +104,72 @@ document.querySelector("#createProgram").addEventListener('click', function () {
 function addMovie() {
     var movieSelect = document.querySelector("#movieSelect")
 
-    var selectedMovies = [];
-    for (var i = 0; i < movieSelect.options.length; i++) {
-        if (movieSelect.options[i].selected == true) {
-            selectedMovies.push(movieSelect.options[i].value)
+    var selectedMovieData = movieSelect.value;
+    console.log('selectedMovieData');
+    var selectedMovieIndex = movieSelect.selectedIndex;
+
+    var programSelect = document.querySelector("#programSelect")
+
+    var selectedProgramData = programSelect.value;
+    var selectedProgramIndex = programSelect.selectedIndex;
+    // console.log(selectedProgramData)
+    // console.log(selectedProgramIndex);
+
+    for (var i = 0; i < movieArr.length; i++) {
+
+
+        if (movieArr[i].getData() === selectedMovieData) {
+
+            var selectedMovie = movieArr[i];
+            // console.log(selectedMovie)
+        }
+    }
+
+    for (var i = 0; i < programArr.length; i++) {
+        // var a = programArr[i].getData();
+        // var b = selectedProgramData + '\n';
+        // console.log(a.length);
+        // console.log(b.length);
+
+
+        if (programArr[i].getData() == selectedProgramData) {
+
+            var selectedProgram = programArr[i];
+            // console.log("EUREKA");
+
         }
     }
 
 
-    var programSelect = document.querySelector("#programSelect")
-
-    var selectedProgram = programSelect.options[programSelect.selectedIndex].value;
+    selectedProgram.addMovie(selectedMovie);
 
 
+    var programData1 = document.createTextNode(selectedProgram.getData());
+    var programData2 = document.createTextNode(selectedProgram.getData());
+    // var s1 = "#programData>:nth-child(" + (selectedProgramIndex + 1) + ") ";
+    // var s2 = "#programSelect>:nth-child(" + (selectedProgramIndex + 1) + ") ";
+    // console.log(s2)
+    var li = document.createElement('li');
+    var replacedLi = document.querySelector("#programData").children[selectedProgramIndex];
+
+    var option = document.createElement('option');
+    var replacedOption = document.querySelector("#programSelect").children[selectedProgramIndex]
+    console.log(replacedOption);
+
+
+    li.appendChild(programData1);
+    option.appendChild(programData2)
+
+    replacedLi.replaceWith(li);
+    replacedOption.replaceWith(option);
 
 
 
 }
+
+document.querySelector("#addMoveToProgram").addEventListener('click', function () {
+    //
+    addMovie();
+
+    //
+});

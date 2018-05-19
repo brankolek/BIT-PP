@@ -10,11 +10,12 @@
    }
 
 
-   function Movie(title, genre, length) {
+   function Movie(objProp) {
 
-       this.title = title;
-       this.genre = new Genre(genre);
-       this.length = length;
+       this.title = objProp.title;
+
+       this.length = objProp.length;
+       this.genre = new Genre(objProp.genreSelect);
 
    }
 
@@ -29,8 +30,8 @@
 
 
 
-   function Program(datum) {
-       this.date = new Date(datum);
+   function Program(objProp) {
+       this.date = new Date(objProp.date);
        this.movies = [];
        this.totalMoviesProgram = 0;
 
@@ -56,7 +57,6 @@
 
        totalLength += " min"
 
-       return this.date.toDateString() + ", " + totalLength
-       //    + '\n' + allMoviesData;
+       return this.date + ", " + totalLength + '\n' + allMoviesData;
 
    }
