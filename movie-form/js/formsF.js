@@ -97,6 +97,8 @@ function addMovie() {
 
 }
 
+
+
 document.querySelector("#createMovie").addEventListener('click', function () {
     //
     create(Movie, movieArr, ["#movieData", "#movieSelect"], ["li", "option"], ["#title", "#length", "#genreSelect"])
