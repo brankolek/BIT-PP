@@ -18,18 +18,18 @@
         <div>
             <label for="title"> Title:</label>
             <br>
-            <input type="text" id="title">
+            <input class="form-control" type="text" id="title">
             <br>
 
 
             <label for="length"> Length (min):</label>
             <br>
-            <input type="text" id="length">
+            <input type="text" class="form-control" id="length">
             <br>
             <br>
 
 
-            <select name="genreSelect" id="genreSelect">
+            <select class="form-control" name="genreSelect" id="genreSelect">
                 <option value="action" id="action">Action</option>
                 <option value="drama" id="drama">Drama</option>
                 <option value="horror" id="horror">Horror</option>
@@ -40,10 +40,10 @@
             <br>
         </div>
 
-        <input type="button" name="createMovie" value="Create movie" id="createMovie">
+        <input type="button" name="createMovie" value="Create movie" class="btn-success" id="createMovie">
 
-        <ul id="movieData">
-
+        <ul class="list-group" id="movieData">
+            <li class="list-group-item">nsjanjs</li>
         </ul>
         <br>
         <br>
@@ -58,12 +58,12 @@
             <label for="date">Date</label>
             <br>
 
-            <input type="date" id="date">
+            <input type="date" class="form-control" id="date">
 
 
             <br>
             <br>
-            <input type="button" value="Create program" id="createProgram">
+            <input type="button" value="Create program" class="btn-success" id="createProgram">
             <br>
 
 
@@ -74,18 +74,18 @@
 
             <label for="movieSelect"> Movie</label>
             <br>
-            <select name="movieSelect" id="movieSelect" multiple></select>
+            <select class="form-control" name="movieSelect" id="movieSelect"></select>
             <br>
 
 
             <label for="programSelect"> Program</label>
             <br>
-            <select name="programSelect" id="programSelect"></select>
+            <select name="programSelect" class="form-control" id="programSelect"></select>
 
 
             <br>
             <br>
-            <input type="button" id="addMoveToProgram" value="Add movie to program">
+            <input type="button" id="addMovie" class="btn-success" value="Add movie to program">
 
 
 
@@ -142,8 +142,8 @@
 
 
 
-    <script src="./js/entities.js"></script>
-    <script src="./js/form.js"></script>
+    <script src="./js/entititesF.js"></script>
+    <script src="./js/formsF.js"></script>
 </body>
 
 </html>

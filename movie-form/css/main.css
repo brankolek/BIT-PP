@@ -1,11 +1,5 @@
-#createMovie {
-    background-color: green;
-}
-
-#createProgram {
-    background-color: green;
-}
-
-#addMoveToProgram {
-    background-color: green;
+.container {
+    border: 1px solid black;
+    padding: 5px;
+    margin-top: 5px;
 }

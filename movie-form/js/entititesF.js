@@ -58,6 +58,6 @@
        totalLength += " min"
 
        return this.date.toDateString() + ", " + totalLength;
-       // + '\n' + allMoviesData;
+       //    + '\n' + allMoviesData;
 
    }
