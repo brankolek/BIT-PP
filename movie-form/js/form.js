@@ -154,3 +154,11 @@ document.querySelector("#addMoveToProgram").addEventListener('click', function (
 
     //
 });
+
+
+console.log($("li"));
+$("li").on("click", function () {
+
+    $(this).remove();
+
+});
