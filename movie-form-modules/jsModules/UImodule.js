@@ -1,4 +1,4 @@
-let UiModule = (function () {
+let UImodule = (function () {
 
 
     let UISelectors = {
@@ -17,14 +17,14 @@ let UiModule = (function () {
 
     }
 
-    let titieInput = $(UISelectors.titleSelector);
+    let titleInput = $(UISelectors.titleSelector);
     let lengthInput = $(UISelectors.lengthSelector);
     let genreInput = $(UISelectors.genreSelector);
     let createMovieButton = $(UISelectors.createMovieButtonSelector);
     let dateInput = $(UISelectors.dateSelector);
     let createProgramButton = $(UISelectors.createProgramButtonSelector);
-    let movieInput = $(UISelectors.movieDropdownSelector);
-    let programInput = $(UISelectors.programDropdownSelector);
+    let movieDropdown = $(UISelectors.movieDropdownSelector);
+    let programDropdown = $(UISelectors.programDropdownSelector);
     let addMovieButton = $(UISelectors.addMovieSelector);
     let movieList = $(UISelectors.movieListSelector)
     let programList = $(UISelectors.programListSelector)
@@ -32,9 +32,9 @@ let UiModule = (function () {
 
     function getMovieData() {
         let movieData = {};
-        movieData.title = titleInput.value;
-        movieData.length = lengthInput.value;
-        movieData.genre = genreInput.value;
+        movieData.title = titleInput.val();
+        movieData.length = lengthInput.val();
+        movieData.genre = genreInput.val();
 
         return movieData;
 
@@ -53,7 +53,7 @@ let UiModule = (function () {
 
     function getProgramData() {
         let programData = {};
-        programData.date = dateInput.value
+        programData.date = dateInput.val()
         return programData;
 
     }
@@ -62,8 +62,8 @@ let UiModule = (function () {
 
         let selectedMovieAndProgramData = {};
 
-        selectedMovieAndProgramData.movie = movieInput.value;
-        selectedMovieAndProgramData.program = programInput.value;
+        selectedMovieAndProgramData.movie = movieInput.val();
+        selectedMovieAndProgramData.program = programInput.val();
 
         return selectedMovieAndProgramData;
 
@@ -74,6 +74,9 @@ let UiModule = (function () {
         let moviePrint = newMovie.getData();
         let li = $("<li>").text(moviePrint);
         movieList.append(li);
+        let option = $("<option>").text(moviePrint);
+        movieDropdown.append(option)
+
 
     }
 
@@ -82,6 +85,13 @@ let UiModule = (function () {
         let programPrint = newProgram.getData();
         let li = $("<li>").text(programPrint);
         programList.append(li);
+        let option = $("<option>").text(programPrint);
+        programDropdown.append(option)
+
+    }
+
+    function updateProgramList(){
+
 
     }
 
@@ -93,7 +103,9 @@ let UiModule = (function () {
         getMovieData,
         getProgramData,
         getSelectedMovieAndProgramData,
-        validateMovieData
+        validateMovieData,
+        renderMovie,
+        renderProgram
 
     }
 

@@ -11,6 +11,7 @@ var dataModule = (function () {
         let firstLetter = this.name[0].toUpperCase();
         let lastLetter = this.name[this.name.length - 1].toUpperCase();
         return firstLetter + lastLetter;
+        return this.name;
     }
 
 
@@ -22,17 +23,25 @@ var dataModule = (function () {
 
     }
 
+
+
+
     Movie.prototype.getData = function () {
 
         return `${this.title}, ${this.length}, ${this.genre.getData()}`;
+
+        // return this.title;
+    }
+    function createMovie(title, genre, length) {
+
+        return new Movie(title, genre, length)
     }
 
 
 
 
-
-    function Program(datum) {
-        this.date = new Date(datum);
+    function Program(date) {
+        this.date = new Date(date);
         this.movies = [];
         this.totalMoviesProgram = 0;
 
@@ -61,38 +70,22 @@ var dataModule = (function () {
 
     }
 
+    function createProgram(date){
+
+        return new Program(date);
+    }
+return {
+
+ createMovie,
+ createProgram
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}
 
 
 
 
 })();
+
+
