@@ -1,35 +1,76 @@
-var mainModule = (function(UImodule,dataModule){
+var mainModule = (function (UImodule, entityModule) {
 
 
-    function addCreateMovieListener(){
-        
-        let createMovieButton =$(UImodule.UISelectors.createMovieButtonSelector)
+    function addCreateMovieListener() {
 
-        createMovieButton.on("click", function(){
-         
+        let createMovieButton = $(UImodule.UISelectors.createMovieButtonSelector)
+
+        createMovieButton.on("click", function () {
+
             let movieData = UImodule.getMovieData()
-            console.log(movieData)
-            let newMovie =  dataModule.createMovie(movieData.title,movieData.genre,movieData.length);
+
+            let newMovie = entityModule.createMovie(movieData.title, movieData.genre, movieData.length);
+
+            let movieArr = dataModule.pushMovie(newMovie);
+
             UImodule.renderMovie(newMovie);
 
         })
     }
 
-    function addCreateProgramListener(){
-        
-        let createProgramButton =$(UImodule.UISelectors.createProgramButtonSelector)
+    function addCreateProgramListener() {
 
-        createProgramButton.on("click", function(){
-         
+        let createProgramButton = $(UImodule.UISelectors.createProgramButtonSelector)
+
+        createProgramButton.on("click", function () {
+
             let programData = UImodule.getProgramData()
-            console.log(programData)
-            let newProgram =  dataModule.createProgram(programData.date)
+
+            let newProgram = entityModule.createProgram(programData.date)
+
+            let programArr = dataModule.pushProgram(newProgram);
+            console.log(programArr)
             UImodule.renderProgram(newProgram);
 
         })
     }
 
 
+    function addAddMovieListener() {
+
+        let addMovieButton = $(UImodule.UISelectors.addMovieButton)
+
+
+        addMovieButton.on("click", function () {
+
+
+            var selectedData = UImodule.getSelectedMovieAndProgramData()
+
+            var selectedMovie;
+            var selectedProgram;
+
+
+            for (var i = 0; i < movieArr.length; i++) {
+
+                if (selectedData.movie === movieArr[i].getMovieData()) {
+
+                    selectedMovie = movieArr[i];
+
+                }
+            }
+            for (var i = 0; i < programArr.length; i++) {
+
+                if (selectedData.program === programArr[i].getProgramData()) {
+
+                    selectedProgram = programArr[i];
+
+                }
+            }
+
+            selectedProgram.addMovie(selectedMovie);
+
+
+            UImodule.updateProrgramList(selectedProgram)
 
 
 
@@ -38,36 +79,54 @@ var mainModule = (function(UImodule,dataModule){
 
 
 
+        })
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-return {
-
-    init: function(){
-
-        console.log("Init...")
-        addCreateMovieListener();
-        addCreateProgramListener();
 
     }
-}
 
 
 
-})(UImodule,dataModule);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    return {
+
+        init: function () {
+
+            console.log("Init...")
+            addCreateMovieListener();
+            addCreateProgramListener();
+            addAddMovieListener();
+
+        }
+    }
+
+
+
+})(UImodule, entityModule);
 
 
 mainModule.init();

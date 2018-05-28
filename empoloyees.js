@@ -2,132 +2,112 @@
 
 
 
+))
+// PERSON0
+function Person(name, surname) {
 
-        // PERSON
-        function Person(name, surname) {
+    this.name = name;
+    this.surname = surname;
 
-            this.name = name;
-            this.surname = surname;
-
-        }
-        // PERSON PROTOTIP 
-        Person.prototype.getFullName = function () {
-            return this.name + " " +
-                this.surname;
-        }
-
-
+}
+// PERSON PROTOTIP 
+Person.prototype.getFullName = function () {
+    return this.name + " " +
+        this.surname;
+}
 
 
 
 
+// EMPLOYEE
+
+function Employee(name, surname, job, salary) {
+    //koristi se call metoda Fje Person, koja ima iste argumente kao person, ali i dodatni this koji u ovom slucaju pokazuje na objekat Employee 
+    //this = {} 
+    Person.call(this, name, surname);
+
+    this.job = job;
+    this.salary = salary;
+
+    // this.__proto__
+
+
+}
+
+//Employee.prototype
 
 
 
 
-
-        // EMPLOYEE
-
-        function Employee(name, surname, job, salary) {
-            //koristi se call metoda Fje Person, koja ima iste argumente kao person, ali i dodatni this koji u ovom slucaju pokazuje na objekat Employee 
-            //this = {} 
-            Person.call(this, name, surname);
-
-            this.job = job;
-            this.salary = salary;
-
-            // this.__proto__
+// STVARA VEZU IZMEDJU EMPLOYEE i PERSON, i to preko Employee.prototype
+Employee.prototype = Object.create(Person.prototype)
+Employee.prototype.constructor = Employee;
+// Employee.prototype.__proto__ = Person.prototype;
 
 
-        }
+//Employee.prototype metode 
+Employee.prototype.getData = function () {
+    var fullName = Object.getPrototypeOf(Employee.prototype).getFullName.call(this)
+    return fullName + " " + this.salary;
 
-        //Employee.prototype
+}
 
-
-
-
-        // STVARA VEZU IZMEDJU EMPLOYEE i PERSON, i to preko Employee.prototype
-        Employee.prototype = Object.create(Person.prototype)
-        Employee.prototype.constructor = Employee;
-        // Employee.prototype.__proto__ = Person.prototype;
-
-
-        //Employee.prototype metode 
-        Employee.prototype.getData = function () {
-            var fullName = Object.getPrototypeOf(Employee.prototype).getFullName.call(this)
-            return fullName + " " + this.salary;
-
-        }
-
-        Employee.prototype.getSalary = function () {
-            return this.salary;
-        }
-        Employee.prototype.increaseSalary = function () {
-            this.salary *= 1.1;
-        }
+Employee.prototype.getSalary = function () {
+    return this.salary;
+}
+Employee.prototype.increaseSalary = function () {
+    this.salary *= 1.1;
+}
 
 
+// DEVELOPER
+
+function Developer(name, surname, job, salary, specialization) {
 
 
+    this.specialization = specialization;
+    // Metoda fje Employee koja radi isto sto i employee ali upisuje sve u Developer
+    Employee.call(this, name, surname, job, salary);
 
 
+}
+//VEZA IZMEDJU DEVELOPER I EMPLOYEE,i to preko developer.prototype, samim tim se stvara veza i izmedju Developer i Person preko Employee.prototype
+
+Developer.prototype = Object.create(Employee.prototype)
+Developer.prototype.constructor = Developer;
+
+//Developer.prototype metode
+Developer.prototype.getSpecialization = function () {
+
+    console.log(this.specialization);
+}
 
 
-        // DEVELOPER
+// MANAGER
+function Manager(name, surname, job, salary, department) {
 
-        function Developer(name, surname, job, salary, specialization) {
+    this.department = department;
+    // Metoda fje Employee koja radi isto sto i employee ali upisuje sve u Developer
+    Employee.call(this, name, surname, job, salary);
 
+}
 
-            this.specialization = specialization;
-            // Metoda fje Employee koja radi isto sto i employee ali upisuje sve u Developer
-            Employee.call(this, name, surname, job, salary);
-
-
-        }
-        //VEZA IZMEDJU DEVELOPER I EMPLOYEE,i to preko developer.prototype, samim tim se stvara veza i izmedju Developer i Person preko Employee.prototype
-
-        Developer.prototype = Object.create(Employee.prototype)
-        Developer.prototype.constructor = Developer;
-
-        //Developer.prototype metode
-        Developer.prototype.getSpecialization = function () {
-
-            console.log(this.specialization);
-        }
+// Veza izmedju Manager i Employee, samim tim i izmedju Manager i Person
+Manager.prototype = Object.create(Employee.prototype);
+Manager.prototype.constructor = Manager;
 
 
+//Manager.prototype metode
+Manager.prototype.getDepartment = function () {
+    console.log(this.department);
+}
+
+Manager.prototype.changeDepartment = function (newDepartment) {
 
 
-
-
-
-        // MANAGER
-        function Manager(name, surname, job, salary, department) {
-
-            this.department = department;
-            // Metoda fje Employee koja radi isto sto i employee ali upisuje sve u Developer
-            Employee.call(this, name, surname, job, salary);
-
-        }
-
-        // Veza izmedju Manager i Employee, samim tim i izmedju Manager i Person
-        Manager.prototype = Object.create(Employee.prototype);
-        Manager.prototype.constructor = Manager;
-
-
-        //Manager.prototype metode
-        Manager.prototype.getDepartment = function () {
-            console.log(this.department);
-        }
-
-        Manager.prototype.changeDepartment = function (newDepartment) {
-
-                20
-                    ` this.department = newDepartment;
+        ` this.department = newDepartment;
 
     }
-
-
 
 
 

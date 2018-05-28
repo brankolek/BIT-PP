@@ -11,7 +11,7 @@ let UImodule = (function () {
         createProgramButtonSelector: "#createProgram",
         movieDropdownSelector: "#movieDropdown",
         programDropdownSelector: "#programDropdown",
-        addMovieSelector: "#addMovie",
+        addMovieButton: "#addMovie",
         movieListSelector: "#movieList",
         programListSelector: "#programList"
 
@@ -25,7 +25,6 @@ let UImodule = (function () {
     let createProgramButton = $(UISelectors.createProgramButtonSelector);
     let movieDropdown = $(UISelectors.movieDropdownSelector);
     let programDropdown = $(UISelectors.programDropdownSelector);
-    let addMovieButton = $(UISelectors.addMovieSelector);
     let movieList = $(UISelectors.movieListSelector)
     let programList = $(UISelectors.programListSelector)
 
@@ -62,8 +61,8 @@ let UImodule = (function () {
 
         let selectedMovieAndProgramData = {};
 
-        selectedMovieAndProgramData.movie = movieInput.val();
-        selectedMovieAndProgramData.program = programInput.val();
+        selectedMovieAndProgramData.movie = movieList.val();
+        selectedMovieAndProgramData.program = programList.val();
 
         return selectedMovieAndProgramData;
 
@@ -90,8 +89,9 @@ let UImodule = (function () {
 
     }
 
-    function updateProgramList(){
+    function updateProgramList(selectedProgram) {
 
+        alert(selectedProgram.getData())
 
     }
 
@@ -105,7 +105,8 @@ let UImodule = (function () {
         getSelectedMovieAndProgramData,
         validateMovieData,
         renderMovie,
-        renderProgram
+        renderProgram,
+        updateProgramList
 
     }
 
